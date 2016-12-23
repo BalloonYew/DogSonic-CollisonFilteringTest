@@ -20,7 +20,8 @@ import com.badlogic.gdx.physics.box2d.CircleShape;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
 import com.badlogic.gdx.physics.box2d.World;
-//import utils.TiledObjectUtil;
+import utils.TiledObjectUtil;
+import utils.TiledObjectUtilEnemy;
 import utils.constants;
 
 
@@ -102,7 +103,7 @@ public class GdxBox2d extends ApplicationAdapter {
 //        fdef.restitution = 0.5f;
 
         fdef.filter.categoryBits = utils.constants.Bit_Player;
-        fdef.filter.maskBits = utils.constants.Bit_Platform | utils.constants.Bit_Enemy;
+        fdef.filter.maskBits = utils.constants.Bit_Platform | utils.constants.Bit_Enemy | utils.constants.Bit_Map;
 
 //          fdef.filter.categoryBits = 0;
 //        fdef.filter.maskBits = 0;
@@ -129,7 +130,7 @@ public class GdxBox2d extends ApplicationAdapter {
 
 
         fdef.filter.categoryBits = utils.constants.Bit_Enemy;
-        fdef.filter.maskBits = utils.constants.Bit_Platform | utils.constants.Bit_EnemyWalls | utils.constants.Bit_Player;
+        fdef.filter.maskBits = utils.constants.Bit_Platform | utils.constants.Bit_EnemyWalls | utils.constants.Bit_Player | utils.constants.Bit_Map;
 
         bplayer2 = pBody;
         pBody.createFixture(fdef);
@@ -162,10 +163,11 @@ public class GdxBox2d extends ApplicationAdapter {
         Player1 = new Texture(Gdx.files.internal("player.png"));
         Enemy = new Texture(Gdx.files.internal("enemy.jpg"));
 
-        //map = new TmxMapLoader().load("testMap.tmx");
-        // tmr = new OrthogonalTiledMapRenderer(map);
+        map = new TmxMapLoader().load("testMap.tmx");
+        tmr = new OrthogonalTiledMapRenderer(map);
 
-        // TiledObjectUtil.parseTiledObjectLayer(world, map.getLayers().get("collision LAyer").getObjects());
+        TiledObjectUtil.parseTiledObjectLayer(world, map.getLayers().get("collision LAyer").getObjects());
+         TiledObjectUtilEnemy.parseTiledObjectLayer(world, map.getLayers().get("EnemyLayer").getObjects());
     }
 
     @Override
@@ -175,7 +177,7 @@ public class GdxBox2d extends ApplicationAdapter {
         Gdx.gl.glClearColor(0f, 0f, 0f, 1f);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-        // tmr.render();
+        tmr.render();
 
         batch.begin();
         batch.draw(Player1, bplayer.getPosition().x * PPM - (32 / 2), bplayer.getPosition().y * PPM - (32 / 2), 32, 32);
@@ -195,8 +197,8 @@ public class GdxBox2d extends ApplicationAdapter {
         b2dr.dispose();
         world.dispose();
         batch.dispose();
-        //tmr.dispose();
-        //map.dispose();
+        tmr.dispose();
+        map.dispose();
     }
 
     public void update(float delta) {
@@ -204,7 +206,7 @@ public class GdxBox2d extends ApplicationAdapter {
 
         inputUpdate(delta);
         cameraUpdate(delta);
-        //tmr.setView(cam);
+        tmr.setView(cam);
         batch.setProjectionMatrix(cam.combined);
 
     }

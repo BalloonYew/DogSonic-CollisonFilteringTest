@@ -23,6 +23,8 @@ public final class constants {
     public static final short Bit_Player = 4;
     public static final short Bit_Enemy = 8;
      public static final short Bit_EnemyWalls = 16;
+      public static final short Bit_Map = 32;
+     
     
     
 //      public static final short Bit_Platform =0x0002;
