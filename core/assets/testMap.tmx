@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="96" height="12" tilewidth="32" tileheight="32" nextobjectid="51">
- <tileset firstgid="1" name="TiledTest" tilewidth="32" tileheight="32" tilecount="42" columns="7">
-  <image source="H:/Profile/Desktop/tiledTest.png" width="241" height="211"/>
- </tileset>
- <tileset firstgid="43" name="test2" tilewidth="32" tileheight="32" tilecount="480" columns="32">
-  <image source="H:/Profile/Desktop/megacommando_mockup.png" width="1024" height="480"/>
- </tileset>
  <layer name="Tile Layer 1" width="96" height="12">
   <data encoding="base64" compression="zlib">
-   eJzdlclOQjEUhtt38hGMLt2auNIoPoHGgUSN0wsoohKnBS5cqoCamMjCnStwXrE2rpxQifFvaHNrc3qHXhBx8aVpuaelX09Pq5yxahsz3kIeWDiW8O0Ao2m1v//m/4LXsfmfAtNgpo38dxH8Rf/KvXkGyv8G2ARbYBvsgCSYDYn4toNHY0wS5PhW5IJcQ0f5Nsdc/PchdpK1zn9RciYp/qL/EcSOEkxI7++Ee92/jajukxH8i2+zWl+sN8y9OVzrP0e/graf8G/uv1H+lxGbAisgDVbBGlgHGYv7JFEfXfzr7k8j+rcRx3+F2f37UXPwv4+YA3AIciAPCuAIHIMTnz3a/JsewroPG+NSf4TjlAUq/wXKv5lTwvWi0afuhuCR2xG/l0AZXIIrcA1uWL3e34F7ba5e7tEp+3Hy38x7yj+V167+cyBvUCD8m/mv9qI73zX22W3815psP7kHdX+fwDN4Aa/gjXn1/kPEa3Pp/gc1/7ba7/f+Unmv6lyz3l/X+p+1OBcMgQRYkD6/jD0F+Q9DTaL7nzP8U2+yzb8t75tZf+LU/3P+8wz0ezAv3SeI3I/jv0aMCd97aHu0swjK/6CzzRDrRX1347hX/qO6CIN5Fxo5t4Kq/fqYy3qu+V4CZYJ0wHn4+f8GxcqxJQ==
+   eJztwQENAAAAwqD3T20PBxQAAAAAzwYSAAAB
   </data>
  </layer>
  <objectgroup name="collision LAyer" offsetx="0.666667" offsety="-0.666667">
