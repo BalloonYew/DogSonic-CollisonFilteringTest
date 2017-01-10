@@ -165,7 +165,7 @@ public class GdxBox2d extends ApplicationAdapter {
 
         map = new TmxMapLoader().load("testMap.tmx");
         tmr = new OrthogonalTiledMapRenderer(map);
-
+//
         TiledObjectUtil.parseTiledObjectLayer(world, map.getLayers().get("collision LAyer").getObjects());
          TiledObjectUtilEnemy.parseTiledObjectLayer(world, map.getLayers().get("EnemyLayer").getObjects());
     }
